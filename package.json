@@ -1,0 +1,45 @@
+{
+  "name": "copilot-desktop",
+  "version": "1.0.0",
+  "description": "Microsoft Copilot Desktop Wrapper",
+  "main": "main.js",
+  "homepage": "https://copilot.microsoft.com/",
+  "author": {
+    "name": "dvytvs",
+    "email": "dvytvs@example.com"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/electron .",
+    "dist": "./node_modules/.bin/electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.microsoft.copilot",
+    "productName": "Copilot",
+    "copyright": "Copyright © 2026 dvytvs",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "icon": "build/icons/linux",
+      "maintainer": "dvytvs <dvytvs@example.com>",
+      "target": [
+        "deb",
+        "pacman",
+        "AppImage",
+        "snap",
+        "tar.gz",
+        "flatpak"
+      ],
+      "category": "Utility"
+    },
+    "flatpak": {
+      "runtimeVersion": "23.08",
+      "base": "org.electronjs.Electron2.BaseApp",
+      "baseVersion": "23.08"
+    }
+  }
+}
